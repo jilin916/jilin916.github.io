@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jilin916 | Personal Homepage</title>
+    <title>Lin Ji | Personal Homepage</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Quicksand:wght@300;500;700&display=swap');
         
         :root {
-            --primary: #f472b6; /* 樱花粉 */
-            --secondary: #8b5cf6; /* 薰衣草紫 */
+            --primary: #3b82f6; /* 经典蓝 */
+            --secondary: #6366f1; /* 靛青紫 */
+            --bg-light: #f0f9ff; /* 极淡蓝底 */
         }
         
         body {
             font-family: 'Quicksand', 'Noto Sans SC', sans-serif;
-            background-color: #fdf2f8;
+            background-color: var(--bg-light);
             scroll-behavior: smooth;
         }
 
         /* 顶部导航栏 */
         .nav-glass {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(244, 114, 182, 0.2);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
         }
 
         /* 侧边栏吸附效果 */
@@ -37,6 +38,7 @@
             display: inline-block;
             margin-bottom: 2rem;
             font-size: 1.875rem;
+            color: #1e3a8a;
         }
         .section-title::after {
             content: '';
@@ -51,66 +53,64 @@
 
         /* 精确的卡片阴影 */
         .fancy-card {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid white;
-            box-shadow: 0 10px 30px -10px rgba(244, 114, 182, 0.2);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e0f2fe;
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.1);
             transition: all 0.3s ease;
         }
         .fancy-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(244, 114, 182, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
         }
 
-        /* 樱花飘落背景 */
-        #sakura-canvas {
+        /* 星空背景 */
+        #bg-canvas {
             position: fixed;
             top: 0; left: 0; pointer-events: none; z-index: -1;
         }
     </style>
 </head>
-<body class="text-gray-700">
+<body class="text-slate-700">
 
-    <canvas id="sakura-canvas"></canvas>
+    <canvas id="bg-canvas"></canvas>
 
     <!-- 顶部导航栏 -->
     <nav class="nav-glass fixed w-full z-50 px-6 py-3 flex justify-between items-center">
-        <div class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-            jilin916.moe
+        <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            LinJi.dev
         </div>
         <div class="hidden md:flex space-x-8 font-medium">
-            <a href="#about" class="hover:text-pink-500 transition">About</a>
-            <a href="#education" class="hover:text-pink-500 transition">Education</a>
-            <a href="#projects" class="hover:text-pink-500 transition">Projects</a>
-            <a href="#awards" class="hover:text-pink-500 transition">Awards</a>
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <a href="#education" class="hover:text-blue-600 transition">Education</a>
+            <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
         </div>
     </nav>
 
     <div class="max-w-7xl mx-auto pt-24 pb-12 px-4 flex flex-col md:flex-row gap-12">
         
-        <!-- 左侧：个人名片 (精确布局) -->
+        <!-- 左侧：个人名片 -->
         <aside class="md:w-1/4">
             <div class="sidebar text-center md:text-left">
                 <div class="relative inline-block group">
-                    <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=jilin916" 
-                         class="w-56 h-56 rounded-3xl bg-white p-2 shadow-xl border border-pink-100 transition-transform group-hover:rotate-3">
-                    <div class="absolute -bottom-2 -right-2 bg-pink-500 text-white p-2 rounded-lg shadow-lg">
-                        <i class="fas fa-terminal"></i>
+                    <!-- 头像：图片更换说明见下文 -->
+                    <img src="images/luna.jpg" 
+                         class="w-56 h-56 rounded-3xl bg-white p-2 shadow-xl border border-blue-100 transition-transform group-hover:scale-105">
+                    <div class="absolute -bottom-2 -right-2 bg-blue-600 text-white p-2 rounded-lg shadow-lg">
+                        <i class="fas fa-code"></i>
                     </div>
                 </div>
 
-                <h2 class="text-3xl font-bold mt-6 text-gray-800 tracking-tight">吉林916</h2>
-                <p class="text-pink-500 font-medium mt-1">本科生 · 软件工程</p>
+                <h2 class="text-3xl font-bold mt-6 text-slate-800 tracking-tight">Lin Ji</h2>
+                <p class="text-blue-600 font-medium mt-1">本科生 · 软件工程</p>
                 
-                <div class="mt-6 space-y-3 text-sm text-gray-500">
-                    <p><i class="fas fa-map-marker-alt w-6 text-pink-400"></i> 广东省, 深圳市</p>
-                    <p><i class="fas fa-envelope w-6 text-pink-400"></i> <a href="mailto:jilin916@example.com" class="hover:underline">jilin916@example.com</a></p>
-                    <p><i class="fas fa-link w-6 text-pink-400"></i> <a href="#" class="hover:underline text-purple-500">Personal Blog</a></p>
+                <div class="mt-6 space-y-3 text-sm text-slate-500">
+                    <p><i class="fas fa-map-marker-alt w-6 text-blue-400"></i> 海南省, 海口市</p>
+                    <p><i class="fas fa-envelope w-6 text-blue-400"></i> <a href="mailto:jilin916@example.com" class="hover:underline">jilin916@example.com</a></p>
                 </div>
 
                 <div class="mt-8 flex justify-center md:justify-start gap-4">
-                    <a href="https://github.com/jilin916" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md hover:bg-pink-500 hover:text-white transition"><i class="fab fa-github"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md hover:bg-blue-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md hover:bg-red-500 hover:text-white transition"><i class="fas fa-paper-plane"></i></a>
+                    <a href="https://github.com/jilin916" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md hover:bg-blue-600 hover:text-white transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md hover:bg-indigo-500 hover:text-white transition"><i class="fas fa-paper-plane"></i></a>
                 </div>
             </div>
         </aside>
@@ -121,9 +121,9 @@
             <!-- About Me -->
             <section id="about">
                 <h2 class="section-title">About Me / 简介</h2>
-                <div class="fancy-card p-8 rounded-3xl leading-loose text-gray-600">
-                    <p class="mb-4">你好！我是 <strong class="text-pink-500">jilin916</strong>。我是一名热爱探索未知领域的开发者，目前正在攻读软件工程学位。我痴迷于将复杂的算法逻辑具象化为华丽的二次元 UI 界面。</p>
-                    <p>我当前的研究兴趣包括：<span class="px-2 py-0.5 bg-pink-100 rounded text-pink-600 font-bold">前端魔法</span>、<span class="px-2 py-0.5 bg-purple-100 rounded text-purple-600 font-bold">Git 协作流</span> 以及 <span class="px-2 py-0.5 bg-blue-100 rounded text-blue-600 font-bold">AI 生成艺术</span>。</p>
+                <div class="fancy-card p-8 rounded-3xl leading-loose text-slate-600">
+                    <p class="mb-4">你好！我是 <strong class="text-blue-600">Lin Ji</strong>。我是一名热爱探索未知领域的开发者，目前正在攻读软件工程学位。</p>
+                    <p>我当前的研究兴趣包括：<span class="px-2 py-0.5 bg-blue-100 rounded text-blue-700 font-bold">前端魔法</span>、<span class="px-2 py-0.5 bg-indigo-100 rounded text-indigo-700 font-bold">Git 协作流</span> 以及 <span class="px-2 py-0.5 bg-sky-100 rounded text-sky-700 font-bold">AI 生成艺术</span>。</p>
                 </div>
             </section>
 
@@ -132,12 +132,14 @@
                 <h2 class="section-title">Education / 教育背景</h2>
                 <div class="space-y-6">
                     <div class="flex gap-6 items-start">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-pink-50 text-2xl">🏫</div>
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-blue-50 text-2xl text-blue-500">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
                         <div>
-                            <h3 class="text-xl font-bold">海南大学 (Sample University)</h3>
-                            <p class="text-pink-500">软件工程 </p>
-                            <p class="text-sm text-gray-400">2023.09 - 2027.06 </p>
-                            <p class="mt-2 text-gray-500">主修：操作系统、数据结构、Web 开发。</p>
+                            <h3 class="text-xl font-bold text-slate-800">海南大学 (Hainan University)</h3>
+                            <p class="text-blue-600 font-medium">软件工程</p>
+                            <p class="text-sm text-slate-400">2023.09 - 2027.06</p>
+                            <p class="mt-2 text-slate-500">主修：操作系统、数据结构、Web 开发。</p>
                         </div>
                     </div>
                 </div>
@@ -147,32 +149,16 @@
             <section id="projects">
                 <h2 class="section-title">Selected Projects / 精选项目</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- 项目卡片 1 -->
                     <div class="fancy-card overflow-hidden rounded-3xl">
-                        <div class="h-40 bg-gradient-to-br from-pink-300 to-purple-400 flex items-center justify-center text-white text-4xl">
-                            <i class="fas fa-magic"></i>
+                        <div class="h-40 bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white text-4xl">
+                            <i class="fas fa-cubes"></i>
                         </div>
                         <div class="p-6">
-                            <h3 class="font-bold text-lg mb-2">Anime Academic Pages</h3>
-                            <p class="text-sm text-gray-500 mb-4">将学术严谨性与二次元审美结合的网页模板系统。</p>
+                            <h3 class="font-bold text-lg mb-2 text-slate-800">Blue Academic Pages</h3>
+                            <p class="text-sm text-slate-500 mb-4">将学术严谨性与深蓝色调审美结合的网页模板系统。</p>
                             <div class="flex gap-2 text-xs">
-                                <span class="bg-gray-100 px-2 py-1 rounded">HTML5</span>
-                                <span class="bg-gray-100 px-2 py-1 rounded">Tailwind</span>
-                                <span class="bg-gray-100 px-2 py-1 rounded">GitHub Actions</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 项目卡片 2 -->
-                    <div class="fancy-card overflow-hidden rounded-3xl">
-                        <div class="h-40 bg-gradient-to-br from-blue-300 to-pink-300 flex items-center justify-center text-white text-4xl">
-                            <i class="fas fa-ghost"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-bold text-lg mb-2">Git Training Lab</h3>
-                            <p class="text-sm text-gray-500 mb-4">个人 Git 实战练习场，记录所有提交历史与技术成长。</p>
-                            <div class="flex gap-2 text-xs">
-                                <span class="bg-gray-100 px-2 py-1 rounded">Git</span>
-                                <span class="bg-gray-100 px-2 py-1 rounded">Bash Shell</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded">HTML5</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded">Tailwind</span>
                             </div>
                         </div>
                     </div>
@@ -180,46 +166,41 @@
             </section>
 
             <!-- Footer -->
-            <footer class="pt-12 text-center text-gray-400 text-sm">
-                <p>© 2026 jilin916 · Designed with ❤️ and Sakura</p>
+            <footer class="pt-12 text-center text-slate-400 text-sm">
+                <p>© 2026 jilin916 · Powered by GitHub Pages</p>
             </footer>
 
         </main>
     </div>
 
-    <!-- 简单的樱花动效脚本 -->
+    <!-- 星空/气泡动效脚本 -->
     <script>
-        const canvas = document.getElementById('sakura-canvas');
+        const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        let petals = [];
-        class Petal {
+        let particles = [];
+        class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height - canvas.height;
-                this.w = Math.random() * 10 + 5;
-                this.h = Math.random() * 8 + 3;
-                this.opacity = Math.random() * 0.5 + 0.3;
-                this.speed = Math.random() * 1.5 + 0.5;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.ellipse(this.x, this.y, this.w, this.h, Math.PI / 4, 0, 2 * Math.PI);
-                ctx.fillStyle = `rgba(244, 114, 182, ${this.opacity})`;
-                ctx.fill();
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedY = Math.random() * 0.5 + 0.2;
+                this.opacity = Math.random() * 0.5;
             }
             update() {
-                this.y += this.speed;
-                this.x += Math.sin(this.y / 50);
-                if (this.y > canvas.height) this.y = -20;
-                this.draw();
+                this.y -= this.speedY;
+                if (this.y < 0) this.y = canvas.height;
+                ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
             }
         }
-        for (let i = 0; i < 30; i++) petals.push(new Petal());
+        for (let i = 0; i < 50; i++) particles.push(new Particle());
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            petals.forEach(p => p.update());
+            particles.forEach(p => p.update());
             requestAnimationFrame(animate);
         }
         animate();
