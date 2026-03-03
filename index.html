@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jilin916 - Personal Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: #fdf2f8; /* 极淡粉底色 */
+            background-image: radial-gradient(#fbcfe8 0.5px, transparent 0.5px);
+            background-size: 20px 20px; /* 萌萌的小圆点底纹 */
+        }
+
+        .sidebar { height: 100vh; position: sticky; top: 0; }
+        
+        /* 模仿截图的专业边框阴影 */
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(244, 114, 182, 0.1);
+        }
+
+        /* 标题下划线动画 */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6);
+            border-radius: 2px;
+            margin-top: 4px;
+        }
+
+        /* 侧边栏链接样式 */
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 6px 0;
+            color: #4b5563;
+            transition: all 0.3s;
+        }
+        .social-link:hover { color: #ec4899; transform: translateX(5px); }
+        .social-link i { width: 25px; color: #db2777; }
+    </style>
+</head>
+<body class="text-gray-700">
+
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 px-4 py-10">
+    
+    <!-- 左侧边栏：参考截图布局 -->
+    <aside class="md:w-1/4">
+        <div class="sidebar flex flex-col items-center md:items-start">
+            <!-- 头像 -->
+            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg mb-6">
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=jilin916" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">jilin916</h1>
+            <p class="text-pink-600 font-medium mb-4 italic">未来大厂首席工程师 (Maybe)</p>
+
+            <!-- 个人基本信息区 -->
+            <div class="w-full space-y-2 text-sm border-t border-pink-100 pt-6">
+                <div class="flex items-center gap-2"><i class="fas fa-location-dot text-pink-400"></i> 中国 · 深圳/上海</div>
+                <div class="flex items-center gap-2"><i class="fas fa-university text-pink-400"></i> 某某大学 · 计算机专业</div>
+                <div class="flex items-center gap-2"><i class="fas fa-envelope text-pink-400"></i> jilin916@example.com</div>
+            </div>
+
+            <!-- 社交/专业链接：模仿截图列表 -->
+            <nav class="w-full mt-8 space-y-1">
+                <a href="https://github.com/jilin916" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="social-link"><i class="fas fa-book"></i> Google Scholar</a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter / X</a>
+                <a href="#" class="social-link"><i class="fas fa-blog"></i> 个人博客</a>
+            </nav>
+
+            <!-- 访客统计小挂件 -->
+            <div class="mt-auto hidden md:block pt-10">
+                <img src="https://komarev.com/ghpvc/?username=jilin916&color=ff69b4&style=flat-square&label=PAGE+VIEWS" alt="views">
+            </div>
+        </div>
+    </aside>
+
+    <!-- 右侧内容区：流式内容 -->
+    <main class="md:w-3/4 space-y-12">
+        
+        <!-- 关于我 -->
+        <section id="about" class="bg-white/60 backdrop-blur-md p-8 rounded-3xl card-shadow">
+            <h2 class="text-2xl font-bold mb-6 section-title">About Me</h2>
+            <div class="space-y-4 leading-relaxed">
+                <p>✨ 欢迎来到我的赛博空间！我是一名对技术充满热情的开发者，目前专注于二次元风格的 UI 设计与 Git 协作流程研究。</p>
+                <p>正如我非常欣赏的 <span class="text-pink-500 font-bold">Yifan Yang</span> 大佬一样，我也相信技术与艺术可以完美融合。我的目标是编写出既严谨又具有美感的代码，就像动漫里的魔法阵一样精准、华丽。</p>
+            </div>
+            <!-- 仿截图中的大图展示 -->
+            <div class="mt-8 rounded-2xl overflow-hidden shadow-inner bg-pink-50 border-2 border-white">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop" class="w-full h-64 object-cover opacity-80 hover:scale-105 transition-transform duration-700" alt="banner">
+            </div>
+        </section>
+
+        <!-- 教育背景：列表式布局 -->
+        <section id="education" class="p-4">
+            <h2 class="text-2xl font-bold mb-6 section-title">Educations</h2>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="text-3xl">🎓</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-pink-700">某某理工大学 / Computer Science</h3>
+                        <p class="text-sm text-gray-500">学士学位 | 2022 - 至今</p>
+                        <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-600">
+                            <li>GPA: 4.0/4.0 (正在努力中)</li>
+                            <li>主修课程：数据结构、算法分析、Git 版本控制实战</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目展示：卡片式布局 -->
+        <section id="projects">
+            <h2 class="text-2xl font-bold mb-6 section-title">Selected Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 项目 1 -->
+                <div class="group bg-white p-6 rounded-2xl border-b-4 border-pink-400 card-shadow hover:-translate-y-2 transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-code-branch text-2xl text-pink-500"></i>
+                        <span class="text-xs font-bold px-2 py-1 bg-pink-100 text-pink-500 rounded">GitHub Pages</span>
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-pink-600 transition-colors">Practical Training Home</h3>
+                    <p class="text-sm text-gray-500 mt-2">基于 GitHub Pages 的个人学术风展示页面，融合了 ACGN 审美元素。</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded">HTML</span>
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded">TailwindCSS</span>
+                    </div>
+                </div>
+                <!-- 项目 2 -->
+                <div class="group bg-white p-6 rounded-2xl border-b-4 border-purple-400 card-shadow hover:-translate-y-2 transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-star text-2xl text-purple-500"></i>
+                        <span class="text-xs font-bold px-2 py-1 bg-purple-100 text-purple-500 rounded">AI tools</span>
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-purple-600 transition-colors">Anime Prompt Generator</h3>
+                    <p class="text-sm text-gray-500 mt-2">利用 AI 生成二次元画风提示词的小工具，帮助画师快速构图。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="text-center pb-10 text-gray-400 text-xs">
+            <p>© 2026 jilin916. Built with <i class="fas fa-heart text-pink-400"></i> and Git Bash.</p>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>
